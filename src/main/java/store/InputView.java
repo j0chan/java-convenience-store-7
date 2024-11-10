@@ -11,13 +11,13 @@ public class InputView {
         try {
             return parseItems(input);
         } catch (IllegalArgumentException e) {
-            System.out.println("[ERROR]" + e.getMessage());
+            System.out.println("[ERROR] " + e.getMessage());
             return readItems(); // 재입력
         }
     }
 
     private List<String> parseItems(String input) {
-        if (!input.matches("\\[\\w+-\\d+](,\\[\\w+-\\d+])*")) {
+        if (!input.matches("\\[[\\w가-힣]+-\\d+](,\\[[\\w가-힣]+-\\d+])*")) {
             throw new IllegalArgumentException("올바르지 않은 형식입니다. 다시 입력해주세요.");
         }
 
