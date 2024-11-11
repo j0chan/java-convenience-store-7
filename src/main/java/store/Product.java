@@ -26,5 +26,12 @@ public class Product {
             return String.format("- %s %d원 %d개 %s", name, price, stock, promotion);
         }
     }
+
+    public void reduceStock(int quantity) {
+        if (quantity > stock) {
+            throw new IllegalArgumentException("[ERROR] 재고 수량을 초과하여 차감할 수 없습니다.");
+        }
+        stock -= quantity;
+    }
 }
 
